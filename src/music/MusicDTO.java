@@ -62,7 +62,7 @@ public class MusicDTO {
 	}
 
 	public void setHits(Long hits) {
-		Hits = hits;
+		this.Hits = hits;
 	}
 
 	@Override
