@@ -33,6 +33,7 @@ public class MusicService {
 		} else {
 			System.out.println("아이디가 중복되었습니다. 다시 입력하세요.");
 		}
+		sc.nextLine();
 	}
 
 	void login() {
@@ -46,10 +47,10 @@ public class MusicService {
 		} else {
 			System.out.println("로그인에 실패하였습니다.");
 		}
+		sc.nextLine();
 	}
 
-	void songReg() {
-		sc.nextLine();
+	void songReg() { //노래 등록
 		System.out.print("노래 제목:");
 		String songTitle = sc.nextLine();
 		System.out.print("장르:");
@@ -69,19 +70,14 @@ public class MusicService {
 		}
 	}
 
-	void pop() {
+	void pop() { //인기차트
 		List<MusicDTO> musicList = mr.pop();
-		for (int i = 0; i < musicList.size(); i++) {
-//			for (int j = i + 1; j < musicList.size(); j++) {
-//				if (musicList.get(i).getHits() < musicList.get(j).getHits()) {
-//					System.out.println(musicList.get(j));
-//				}
-//			}
-			System.out.println(musicList.get(i));
+		for (MusicDTO m: musicList){
+			System.out.println(m);
+			}
 		}
-	}
 
-	void sGenre() {
+	void sGenre() { 
 		System.out.print("장르:");
 		String Genre = sc.next();
 		MusicDTO genre = mr.sGenre(Genre);
@@ -90,6 +86,7 @@ public class MusicService {
 		} else {
 			System.out.println("일치하는 장르가 없습니다.");
 		}
+		sc.nextLine();
 	}
 
 	void sSinger() {
@@ -101,6 +98,7 @@ public class MusicService {
 		} else {
 			System.out.println("일치하는 가수가 없습니다.");
 		}
+		sc.nextLine();
 	}
 
 	void savePlaylist() {
@@ -112,6 +110,7 @@ public class MusicService {
 		} else {
 			System.out.println("저장에 실패하였습니다.");
 		}
+		sc.nextLine();
 	}
 
 	void playlist() {
@@ -141,6 +140,7 @@ public class MusicService {
 		} else {
 			System.out.println("로그인에 실패하였습니다.");
 		}
+		sc.nextLine();
 	}
 
 	void pass() {
@@ -162,5 +162,6 @@ public class MusicService {
 		} else {
 			System.out.println("로그인에 실패하였습니다.");
 		}
+		sc.nextLine();
 	}
 }

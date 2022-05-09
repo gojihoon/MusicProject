@@ -1,6 +1,7 @@
 package music;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class MusicRepository {
@@ -17,7 +18,7 @@ public class MusicRepository {
 		dealList.add(deal);
 	}
 
-	boolean signCheck(String clientId) { //중복체크
+	boolean signCheck(String clientId) { // 중복체크
 		boolean result = true;
 		for (ClientDTO c : clientList) {
 			if (clientId.equals(c.getClientId())) {
@@ -29,7 +30,7 @@ public class MusicRepository {
 
 	boolean login(String clientId, String clientPass) {
 		boolean result = false;
-		for (ClientDTO c: clientList) {
+		for (ClientDTO c : clientList) {
 			if (clientId.equals(c.getClientId()) && clientPass.equals(c.getClientPass())) {
 				result = true;
 			}
@@ -42,14 +43,15 @@ public class MusicRepository {
 	}
 
 	List<MusicDTO> pop() {
+		Collections.sort(musicList, new ComparatorMusicDTO()); //내림차순 정렬
 		return musicList;
 	}
 
 	MusicDTO sGenre(String Genre) {
 		MusicDTO genre = null;
 		for (MusicDTO m : musicList) {
-			if (Genre.equals(m.getGenre())){
-				m.setHits(m.getHits()+1);
+			if (Genre.equals(m.getGenre())) {
+				m.setHits(m.getHits() + 1);
 				return m;
 			}
 		}
@@ -60,7 +62,7 @@ public class MusicRepository {
 		MusicDTO singer = null;
 		for (MusicDTO m : musicList) {
 			if (Singer.equals(m.getSinger())) {
-				m.setHits(m.getHits()+1);
+				m.setHits(m.getHits() + 1);
 				return m;
 			}
 		}
@@ -84,7 +86,7 @@ public class MusicRepository {
 
 	String loginCheck(String clientId, String clientPass) {
 		String id = null;
-		for (ClientDTO c: clientList){
+		for (ClientDTO c : clientList) {
 			if (clientId.equals(c.getClientId()) && clientPass.equals(c.getClientPass())) {
 				return c.getClientId();
 			}

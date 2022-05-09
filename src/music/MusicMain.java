@@ -24,7 +24,7 @@ public class MusicMain {
 				ms.songReg();// 노래 등록 songRegistration
 			}
 			if (s == 4) {
-				ms.pop();// 인기 차트 조회
+				ms.pop();// 인기 차트 조회(조회수 높은 순) 
 			}
 			if (s == 5) {
 				ms.sGenre();// 장르별 검색
