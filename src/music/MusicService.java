@@ -19,7 +19,7 @@ public class MusicService {
 		if (result == true) {
 			System.out.print("비밀번호:");
 			String clientPass = sc.next();
-			System.out.print("계좌번호:");
+			System.out.print("계좌번호(000-000):");
 			String accountNumber = sc.next();
 			ClientDTO client = new ClientDTO(++id, clientId, clientPass, 0L, accountNumber, 0L);
 			result = mr.sign(client);
@@ -72,11 +72,12 @@ public class MusicService {
 	void pop() {
 		List<MusicDTO> musicList = mr.pop();
 		for (int i = 0; i < musicList.size(); i++) {
-			for (int j = i + 1; j < musicList.size(); j++) {
-				if (musicList.get(i).getHits() < musicList.get(j).getHits()) {
-					System.out.println(musicList.get(j));
-				}
-			}
+//			for (int j = i + 1; j < musicList.size(); j++) {
+//				if (musicList.get(i).getHits() < musicList.get(j).getHits()) {
+//					System.out.println(musicList.get(j));
+//				}
+//			}
+			System.out.println(musicList.get(i));
 		}
 	}
 

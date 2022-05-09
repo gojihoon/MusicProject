@@ -11,13 +11,14 @@ public class MusicMain {
 		int s = 0;
 		while (run) {
 			System.out.println("| 1.회원 가입 | 2.로그인 | 3.노래 등록 | 4.인기 차트 | 5.장르별 검색 |"
-					+ " 6.가수별 검색 | 7.재생 목록 저장 | 8.재생 목록 확인 | 9.이용권 구매 | 10.입금 | 11.종료 |");
+					+ " 6.가수별 검색 | 7.재생 목록 저장 | 8.재생 목록 확인 | 9.입금 | 10.이용권 구매 | 11.종료 |");
+			System.out.print(">");
 			s = sc.nextInt();
 			if (s == 1) {
-				ms.sign();
+				ms.sign(); //회원가입
 			}
 			if (s == 2) {
-				ms.login();
+				ms.login(); //로그인
 			}
 			if (s == 3) {
 				ms.songReg();// 노래 등록 songRegistration
@@ -32,16 +33,16 @@ public class MusicMain {
 				ms.sSinger();// 가수별 검색
 			}
 			if (s == 7) {
-				ms.savePlaylist();
+				ms.savePlaylist(); //플레이리스트 저장
 			}
 			if (s == 8) {
-				ms.playlist();
+				ms.playlist(); //플레이리스트 확인
 			}
 			if (s == 9) {
 				ms.deposit();// 입금
 			}
 			if (s == 10) {
-				ms.pass();
+				ms.pass(); // 이용권 구매
 			}
 			if (s == 11) {
 				System.out.println("종료");
